@@ -1,6 +1,0 @@
-
-#pid=fork()について
-http://linuxc.info/process/process2.html
-
-#exec
-https://kaworu.jpn.org/c/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E5%AE%9F%E8%A1%8C_exec
