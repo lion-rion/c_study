@@ -25,7 +25,7 @@ int main(){
         
         //引用 : コマンドの引数をポインタの配列として取る 
         //また、配列の最初は、ファイル名へのポインタとし、配列の最後は NULL にする必要がある。
-        char *pargs[] = {cmd, NULL};
+        char *pargs[2] = {cmd, NULL};
         int *status;
         int pid = fork();
         if (pid == 0)
@@ -40,6 +40,5 @@ int main(){
             printf("error");
         }
     }
-
     return 0;
 }
