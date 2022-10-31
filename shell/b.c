@@ -29,18 +29,22 @@ int main(){
         if (strcmp(cmd, inside_cmd[0]) == 0 || strcmp(cmd, inside_cmd[1]) == 0) {
             return 0;
         }
-        
-        char *p;        
+         
         char *pargs[128];
         //初期化
         for (int i = 0; i<128; i++)
         {
             pargs[i]= NULL;
         }
-
-        pargs[0]  = strtok(cmd, " "); //スペースまでを代入
-        pargs[1] = strtok(NULL, " "); //スペース以降を代入
+        char *p;
         
+        p = strtok(cmd, " "); //スペースまでを代入
+        for(int i = 0; p;i++)
+        {
+            pargs[i] = p;
+            p = strtok(NULL, " ");
+        }
+
         int *status;
         int pid = fork();
         if (pid == 0)

@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "random": "c"
+        "random": "c",
+        "string.h": "c",
+        "__availability": "c",
+        "string": "c",
+        "bitset": "c",
+        "stdio.h": "c"
     }
 }

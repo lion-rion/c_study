@@ -34,7 +34,7 @@ int main(){
             _exit(0); //終了システムコール
             
         } else if (pid > 0) {
-            //親プロセスを待つ
+            //子プロセスを待つ
             wait(status);
         } else {
             printf("error");
