@@ -33,8 +33,6 @@ If you want to connect another computer, you have to find local-ip-address.
 
 <b>example</b>
 
-
-
 ```sh
 # Type : on Linux
 $ ifconfig 
@@ -52,6 +50,13 @@ Change port number.
 ```
 
 After this, start the server program, then start client program.
+
+```sh
+#client
+./tcp-cli
+
+#server
+./tcp-ser
 
 # shell
 
