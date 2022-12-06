@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     sock0 = socket(AF_INET, SOCK_STREAM, 0);
     /* ソケットの設定 */
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(4000);
+    addr.sin_port = htons(4000); //port number
     addr.sin_addr.s_addr = INADDR_ANY;
     bind(sock0, (struct sockaddr *)&addr, sizeof(addr));
     /* TCP クライアントからの接続要求を待てる状態にする */
@@ -44,17 +44,17 @@ int main(int argc, char *argv[])
         read(sock, buf, sizeof(buf));
         if (strcmp(buf, "quit") == 0)
         {
-            printf("クライアントから切断されました\n");
+            printf("Disconnected\n");
             break;
         }
         printf("%s\n", buf);
 
-        printf("送信するメッセージ : "); fgets(cmd, 128, stdin); //コマンドを入力させる
+        printf("MESSAGE (or quit) : "); fgets(cmd, 128, stdin); //コマンドを入力させる
         cmd[strlen(cmd) - 1] = '\0';  //\nを削除
         write(sock, cmd, strlen(cmd));
         if(strcmp(cmd,"quit")==0) {
             //終了
-            printf("終了します\n");
+            printf("Exit...\n");
             break;
         }
         

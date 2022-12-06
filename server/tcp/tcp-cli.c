@@ -8,7 +8,7 @@
 #include <arpa/inet.h>
 int main(int argc, char *argv[])
 {
-    char ip = "127.0.0.1";  //ip address
+    char *ip = "127.0.0.1";  //ip address
     struct sockaddr_in server;
     int sock;
     char buf[65536];
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     char *ptr;
     while (1)
     {
-        printf("Message (or quit）) : : "); fgets(cmd, 128, stdin); //コマンドを入力させる
+        printf("Message (or quit）) : "); fgets(cmd, 128, stdin); //コマンドを入力させる
         cmd[strlen(cmd) - 1] = '\0';  //\nを削除
         write(sock, cmd, strlen(cmd));
         if(strcmp(cmd,"quit")==0) {
