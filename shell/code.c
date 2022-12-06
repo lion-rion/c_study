@@ -184,7 +184,6 @@ void get_env_list(char *env_list[], int *num_env) {
 // フルパスを取得
 void get_full_path(char *pargs[], char *env_list[], int num_env) {
     // ディレクトリ検索
-    //printf("debugxxx: %s\n", pargs[0]);
     for (int i = 0; i < num_env; i++) {
         DIR *dir_stream;
 
@@ -248,19 +247,15 @@ int main(void) {
         len_command_lines = devide_sentence(cmd, pargs, " ");
         //くぎりとbgのチェック
         background = check_background(pargs, len_command_lines);
-        //printf("バックグラウンド : %d\n", background); デバッグ用
-         //内部コマンドの判定
+        //内部コマンドの判定
         if (inner_command(pargs, &process_manager) == true) {
             continue;
         }
-        //printf("debug1: %s\n", pargs[0]);
         get_full_path(pargs, env_list, num_env);
 
         char *hello[128];
 
         strcpy(hello[0], pargs[0]);
-        //printf("debug2: %s\n", pargs[0]);
-        //printf("hello world\n\n");
 
         //プロセス生成
         pid = fork();
