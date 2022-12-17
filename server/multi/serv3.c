@@ -20,10 +20,10 @@ int main(int argc, char *argv[])
     sock = socket(AF_INET, SOCK_DGRAM, 0);
     addr.sin_family = AF_INET;
     addr.sin_port = htons(12345);
-    addr.sin_addr.s_addr = inet_addr("239.103.111.2");
+    addr.sin_addr.s_addr = inet_addr("239.192.1.10");
     /* (複数の NIC がある場合に備えて)出力インターフェースの IP アドレスを設定 */
     /* 192.168.10.5 の部分を自分の PC の IP アドレス値に合わせて変更すること */
-    ipaddr = inet_addr("172.30.88.130");
+    ipaddr = inet_addr("192.168.0.4");
     if (setsockopt(sock,
             IPPROTO_IP,
             IP_MULTICAST_IF,
